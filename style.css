@@ -1,0 +1,37 @@
+/* 1. Register the custom font */
+@font-face {
+    font-family: 'AdindaMelia';
+    src: url('fonts/Adinda_Melia.otf') format('opentype'); /* Ensure this matches your file name */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 2. Update your body styling */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #050c1a 0%, #0d1e3d 100%);
+    overflow: hidden;
+}
+
+/* 3. Apply the custom font */
+#maintenance-text {
+    font-family: 'AdindaMelia', cursive; /* Fallback to cursive if file fails */
+    font-size: 5rem;
+    color: #ffffff;
+    margin: 0;
+    font-weight: 400;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+#maintenance-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
