@@ -29,9 +29,111 @@ body {
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 1.5s ease, transform 1.5s ease;
+    text-align: center;
+    padding: 2rem;
 }
 
 #maintenance-text.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Contact Info Styling */
+.contact-info {
+    margin-top: 5rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 1.5s ease 0.5s, transform 1.5s ease 0.5s;
+    text-align: center; 
+}
+
+#maintenance-text.visible ~ .contact-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.maintenance-container > .contact-info.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-item {
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    color: #a0a0a0;
+    margin: 0.8rem 0;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+}
+
+.contact-label {
+    font-weight: 400;
+    color: #ffffff;
+    display: inline-block;
+    min-width: 80px;
+}
+
+.contact-item a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s ease, color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #a0a0a0;
+    border-bottom: 1px solid #a0a0a0;
+}
+
+/* Tablet screens (768px and below) */
+@media (max-width: 768px) {
+    #maintenance-text {
+        font-size: 3.5rem;
+    }
+
+    .contact-item {
+        font-size: 0.95rem;
+    }
+
+    .contact-label {
+        min-width: 70px;
+    }
+}
+
+/* Mobile screens (480px and below) */
+@media (max-width: 480px) {
+    #maintenance-text {
+        font-size: 2.5rem;
+    }
+
+    .contact-info {
+        margin-top: 2rem;
+    }
+
+    .contact-item {
+        font-size: 0.9rem;
+        margin: 0.6rem 0;
+    }
+
+    .contact-label {
+        display: block;
+        min-width: auto;
+        margin-bottom: 0.3rem;
+    }
+
+    .contact-item a {
+        display: block;
+    }
+}
+
+/* Extra small phones (360px and below) */
+@media (max-width: 360px) {
+    #maintenance-text {
+        font-size: 2rem;
+    }
+
+    .contact-item {
+        font-size: 0.85rem;
+    }
 }
